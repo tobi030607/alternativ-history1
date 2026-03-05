@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Alternate History Simulator</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
+text-align:center;
+padding:40px;
+}
+
+h1{
+font-size:40px;
+}
+
+select{
+padding:10px;
+font-size:18px;
+margin-top:20px;
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+margin-left:10px;
+background:#ff9800;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ffa733;
+}
+
+#result{
+margin-top:40px;
+padding:20px;
+background:rgba(0,0,0,0.4);
+border-radius:10px;
+width:60%;
+margin-left:auto;
+margin-right:auto;
+font-size:18px;
+line-height:1.6;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>🌍 Alternate History Simulator</h1>
+
+<p>Ändere ein historisches Ereignis und entdecke eine alternative Zeitlinie.</p>
+
+<select id="event">
+
+<option value="moon">Apollo 11 scheitert</option>
+<option value="ww2">Deutschland gewinnt den Zweiten Weltkrieg</option>
+<option value="titanic">Titanic sinkt nicht</option>
+<option value="internet">Internet wird nie erfunden</option>
+<option value="rome">Römisches Reich fällt nicht</option>
+
+</select>
+
+<button onclick="simulate()">Simulation starten</button>
+
+<div id="result"></div>
+
+<script>
+
+function simulate(){
+
+let event=document.getElementById("event").value;
+let text="";
+
+if(event==="moon"){
+
+text=`
+<h2>Apollo 11 scheitert (1969)</h2>
+
+<p>Die Mondmission endet tragisch. Die Astronauten schaffen es nicht zurück zur Erde.</p>
+
+<ul>
+<li>Die Raumfahrtprogramme werden stark eingeschränkt</li>
+<li>Die Sowjetunion gewinnt das Space Race</li>
+<li>Mondmissionen werden für Jahrzehnte gestoppt</li>
+<li>Technologische Innovation verlangsamt sich</li>
+</ul>
+
+`;
+
+}
+
+else if(event==="ww2"){
+
+text=`
+<h2>Deutschland gewinnt den Zweiten Weltkrieg</h2>
+
+<ul>
+<li>Europa wird neu aufgeteilt</li>
+<li>Die USA ziehen sich stärker aus Europa zurück</li>
+<li>Die Weltordnung verändert sich drastisch</li>
+<li>Viele Demokratien verschwinden</li>
+</ul>
+
+`;
+
+}
+
+else if(event==="titanic"){
+
+text=`
+<h2>Titanic sinkt nicht</h2>
+
+<ul>
+<li>Das Schiff wird zum berühmtesten Luxusliner</li>
+<li>Internationale Sicherheitsregeln für Schiffe kommen später</li>
+<li>Der Mythos der Titanic existiert nie</li>
+<li>Die Reederei expandiert weiter</li>
+</ul>
+
+`;
+
+}
+
+else if(event==="internet"){
+
+text=`
+<h2>Das Internet wird nie erfunden</h2>
+
+<ul>
+<li>Kommunikation bleibt stark lokal</li>
+<li>Viele Tech-Unternehmen entstehen nie</li>
+<li>Information verbreitet sich viel langsamer</li>
+<li>Globale Vernetzung existiert kaum</li>
+</ul>
+
+`;
+
+}
+
+else if(event==="rome"){
+
+text=`
+<h2>Das Römische Reich fällt nicht</h2>
+
+<ul>
+<li>Europa bleibt lange unter römischer Kontrolle</li>
+<li>Latein bleibt dominante Sprache</li>
+<li>Technologie und Infrastruktur entwickeln sich anders</li>
+<li>Viele moderne Länder entstehen nie</li>
+</ul>
+
+`;
+
+}
+
+document.getElementById("result").innerHTML=text;
+
+}
+
+</script>
+
+</body>
+</html>
